@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | PromptVault</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="brand-section">
+        <h1>PROMPT<br /><span class="highlight">VAULT</span>_</h1>
+        <p>// SAFEGUARD YOUR INTELLIGENCE</p>
+      </div>
+
+      <div class="form-section">
+        <h2>ACESSAR SISTEMA</h2>
+
+        <form id="loginForm">
+          <div class="input-group">
+            <label>EMAIL_</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="ex: dev@promptvault.com"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>SENHA_</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="******"
+              required
+            />
+          </div>
+
+          <button type="submit" id="btn-login">ENTRAR [ENTER]</button>
+        </form>
+
+        <p id="mensagem-erro" class="error-msg"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

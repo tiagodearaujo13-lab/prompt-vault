@@ -16,6 +16,10 @@ router.post('/users', UserController.create);
 // Rota para LISTAR usuários (GET)
 router.get('/users', UserController.index);
 
+// Rota de LOGIN (POST) 
+// POST para dados sensíveis passwords
+router.post('/login', UserController.login);
+
 // Exportar para o server.js conseguir usar
 module.exports = router;
 

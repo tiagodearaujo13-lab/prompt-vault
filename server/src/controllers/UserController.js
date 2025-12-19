@@ -33,5 +33,36 @@ module.exports = {
     async index(req, res) {
         // Retorna a lista completo do banco
         return res.json(database.users);
+    },
+
+    // Função de LOGIN
+    async login(req, res) {
+        console.log("Tentativa de Login:", req.body);
+
+        const { email, password } = req.body;
+
+        // Procurar o usuario pelo email
+        // .find() percorre a array e devolve o primeiro item que bater certo
+        const useEncontrado = database.users.find(user => user.email === email);
+
+        // se não encontrou ninguém com esse email
+        if (!useEncontrado) {
+            return res.status(400).json({ error: "Ususario não encontrato!" });
+        }
+
+        // Verificar password
+        // texto simples para estudo
+        if (useEncontrado.password !== password) {
+            return res.status(401).json({ error: "Password incorreto!" });
+        }
+
+        return res.json({
+            message: "Login realizado com sucesso!",
+            user: {
+                id: useEncontrado.id,
+                name: useEncontrado.name,
+                email: useEncontrado.email
+            }
+        });
     }
 };
